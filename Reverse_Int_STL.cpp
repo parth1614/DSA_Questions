@@ -1,29 +1,41 @@
-#include <iostream>
-#include<algorithm>
-#include<string>
 #include<bits/stdc++.h>
+#include<algorithm>
 using namespace std;
 
+void merge(vector<int> &list1){
+    
+for(int i=0;i<list1.size();++i){
+    for(int j=i+1;j<list1.size();++j){
+        if(list1[i]==list1[j]){
+            vector<int>::iterator it = list1.begin()+j;
+            list1.erase(it);
+        }
+    }
+}
+
+vector<int> v = list1;
+
+for(int x=0;x<v.size();++x){
+    cout<<v[x]<<" ";
+}
+    
+}
+
 int main(){
-    int x;
-    cin>>x;
     
-    //If the integer is negative
-    if(x<0){
-        string neg = to_string(x); //Converting into string
-        reverse(neg.begin()+1, neg.end()); //reverse the whole string except the minus sign i.e. leaving the first index
-        int rev_neg = stoi(neg); //converting the string back to int
-    cout<<rev_neg;
+    vector<int> list1;
+    
+    int l1;
+    cin>>l1;
+    
+    for(int i=0;i<l1;++i){
+        int x;
+        cin>>x;
+        list1.push_back(x);
     }
     
-    //When the integer is positive
-    else{
-        string num = to_string(x);
-         reverse(num.begin(), num.end());
-         int rev_num = stoi(num);
-    cout<<rev_num;
-    }
     
+    merge(list1);
     
     
 }
