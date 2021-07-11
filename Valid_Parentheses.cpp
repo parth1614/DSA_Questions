@@ -3,7 +3,59 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void check(vector<char> &v){
+bool traverse_map(char value, map<char,char> &m){
+    
+    map<char,char>::iterator it = m.begin();
+    
+    while(it!=m.end()){
+        
+        if(it->second==value){
+            return true;
+        }
+        it++;
+    }
+    return false;
+}
+
+bool check_bracket(vector<char> &v){
+    int sum,sum1;
+    stack <char> bracket;
+    map<char,char> m;
+    
+    m[')'] = '(';
+    m[']'] = '[';
+    m['}'] = '{';
+    
+    for(int i=0; i<v.size();++i){
+        
+        if(traverse_map(v[i],m)){
+            bracket.push(v[i]);
+        }
+        
+        if(m.find(v[i]) != m.end()){
+            
+            if(bracket.empty()){
+             return false;
+            }
+            
+            if(bracket.top() != m[v[i]]){
+                return false;
+            }
+           else{
+            bracket.pop();
+            }
+        }
+        
+    }
+    
+    if(bracket.size() > 0)
+    return false;
+ else
+    return true;
+    
+}
+
+/*void check(vector<char> &v){
     
     //assigning unique keys the numers
     map<char,int> strin;
@@ -49,7 +101,7 @@ void check(vector<char> &v){
         cout<<"false";
     }
     
-}
+}*/
 
 int main(){
     string str;
@@ -57,5 +109,5 @@ int main(){
     
     vector<char> v(str.begin(), str.end()); //splitting string into a vector of Char
     
-    check(v);
+    check_bracket(v);
 }
