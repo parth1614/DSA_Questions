@@ -6,6 +6,19 @@ int same(vector<string> &str){
     int vecsize = str.size();
     int sum = 0;
     
+    for(int i=0;i<vecsize;++i){
+        if((str[i].compare(str[i+1]))==0){
+            sum = sum+1;
+        }
+    }
+    
+    if(sum==vecsize-1){
+        return 1;
+    }
+    
+    else{
+        return 0;
+    }
     
 }
 
