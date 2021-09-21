@@ -17,11 +17,11 @@ bool EqualSumPart(vector<int>& arr, int n){
     for(int i=0;i<n+1;++i){
         vector<bool> temp;
         for(int j=0;j<(sum/2)+1;++j){
-            if(i==0){
-                temp.push_back(false);
-            }
-            else if(j==0){
+            if(j==0 || (i==0&&j==0)){
                 temp.push_back(true);
+            }
+            else if(i==0){
+                temp.push_back(false);
             }
         }
         t.push_back(temp);
