@@ -25,7 +25,7 @@ int main(){
     
     int n = x.length();
     int m = y.length();
-std::cout <<n<<" "<<m<< std::endl;
+//std::cout <<n<<" "<<m<< std::endl;
     
     cout<<LCS(x,y,n,m);
 }
