@@ -5,8 +5,6 @@ bool subsetSum(int n,int sum, vector<int>& arr){
     vector<vector<bool>> t;
     for(int i=0;i<n+1;++i){
         vector<bool> temp;
-       for(int i=0;i<n+1;++i){
-        vector<bool> temp;
         for(int j=0;j<sum+1;++j){
             if(j==0 || (i==0&&j==0)){
                temp.push_back(true);
