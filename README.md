@@ -1,4 +1,4 @@
-# Leetcode_STL
+# Leetcode Solutions in STL
 Leetcode problem solutions in C++ STL
 
 # Dynamic Programming
