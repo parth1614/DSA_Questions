@@ -3,7 +3,7 @@ using namespace std;
 
 int Floor(vector<int> &vec, int start, int end, int target){
     
-    int mid = (start+end)/2;
+    int mid = start + (end-start)/2; //overcomes the overflow problem
     
     while(start<=end){
         
