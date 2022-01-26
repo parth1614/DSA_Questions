@@ -7,7 +7,7 @@ int last(vector<int> &vec, int start, int end, int target){
     int n = vec.size() - 1;
     while(start<=end){
         
-      //either there is only one element in the vector or target element is greater than the vec[mid-1] so that there is no before occurance
+      //either there is only one element in the vector or target element is less than or equal to vec[mid+1] so that there is no after occurance
       // and && target element is equal to the middle element
         if((mid==n || target<=vec[mid+1]) && target==vec[mid]){
             flag = mid;
