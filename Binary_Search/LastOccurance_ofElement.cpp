@@ -7,7 +7,7 @@ int last(vector<int> &vec, int start, int end, int target){
     
     while(start<=end){
         
-        if((mid==(vec.size()- 1 )|| target<vec[mid+1]) && target==vec[mid]){
+        if((mid==(vec.size()- 1 )|| target<=vec[mid+1]) && target==vec[mid]){
             
             return mid;
         }
