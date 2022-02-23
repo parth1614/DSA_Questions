@@ -3,25 +3,35 @@ using namespace std;
 
 auto alpha(vector<char> &vec, int start, int end, auto key){
     
-    int mid = start + (end-start)/2;
-    int answer = -1;
+    
+//     int answer = -1;
     int flag = 0;
     
     while(start<=end){
+        
+        int mid = start + (end-start)/2;
+        
+        //If the key is present at the mid, then return the (mid+1)th element and counter the flag as 1
         if(vec[mid]==key){
              flag = 1;
             return vec[mid+1];
         }
+        
+        //If the key is less than the middle element, then assign end-->mid-1
         else if(vec[mid]>key){
             end = mid - 1;
-            answer = mid;
+           // answer = mid;
         }
+        
+        
         else if(vec[mid]<key){
             start = mid + 1;
         }
     }
+    
+    //If the value of the flag is zero i.e. the Key Char is not found, then we return -1
     if(flag==0){
-        return vec[answer];
+        return -1;
     }
     
 }
