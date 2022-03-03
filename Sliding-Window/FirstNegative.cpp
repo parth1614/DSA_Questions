@@ -23,6 +23,8 @@ void FirstNeg(vector<int> &vec, int n, int k){
                 res.push_back(0);
             }
             else{
+                
+                //If the List is not empty, we'll push back the front element in the result vetor, because it'll be the first negative number
                 res.push_back(store.front());
                 
                 if(vec[i]==store.front()){
