@@ -45,3 +45,5 @@ class Solution{
     return val;
     }
 };
+
+//The Time Complexity of the function is O(n+m), because insert function takes linear time
