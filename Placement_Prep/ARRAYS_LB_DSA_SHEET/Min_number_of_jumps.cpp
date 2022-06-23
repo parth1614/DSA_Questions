@@ -3,6 +3,18 @@ class Solution{
   public:
     int minJumps(int arr[], int n){
         // Your code here
+     //Edge Cases 
+      if(n>1)
+       {
+            if(arr[0] == 0){
+            return -1;
+        }    
+        }
+        
+        if(n==1){
+            return 0;
+        }
+      
    vector<int> jumps;
    jumps.push_back(0);
    int min_jump = INT_MAX;
