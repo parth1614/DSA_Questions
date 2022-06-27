@@ -31,3 +31,36 @@ class Solution{
     }
 };
 //x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x- This Approach passes 343/350 test cases, 344th has TLE x-x-x-x-x-x-x-x-x--x-x-x-x-x-x-x-x-xx-x-x-x-x-x//
+
+
+class Solution{
+  public:
+    vector<int> duplicates(int arr[], int n) {
+        // code here
+        vector<int> vec;
+        //sort(arr,n);
+        for(int i=0;i<n;++i){
+            int sum = 0;
+            vec.insert(vec.begin() + arr[i], sum + 1 );
+        }
+            
+            int flag = 0;
+            
+        for(auto it : vec){
+            if(vec[it]>1){
+                flag += 1;
+            }
+            else{
+                vec.erase(it);
+            }
+        }
+        
+        if(flag>=1){
+            return vec;
+        }
+        else{
+            vec.push_back(-1);
+            return vec;
+        }
+    }
+};
