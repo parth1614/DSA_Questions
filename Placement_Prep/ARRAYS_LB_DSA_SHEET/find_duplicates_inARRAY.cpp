@@ -46,8 +46,8 @@ class Solution{
             
             int flag = 0;
             
-        for(auto it : vec){
-            if(vec[it]>1){
+        for(auto it=vec.begin();it!=vec.end();++it){
+            if((*it)>1){
                 flag += 1;
             }
             else{
