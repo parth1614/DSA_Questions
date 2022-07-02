@@ -7,9 +7,20 @@ class Node{
   int data;
   Node* next;
   
+  //Constructor to create a new Node
   Node(int data){
       this -> data = data;
       this -> next = NULL;
+  }
+  
+  //Destructor to delete a Node
+  ~Node(){
+      
+      //Freeing the memory
+      if(this -> next != NULL){
+          delete next;
+          this -> next = NULL;
+      }
   }
     
 };
@@ -52,6 +63,42 @@ void insertAtPosition(Node* &tail,Node* &head, int pos, int d){
     
     nodeToInsert -> next = temp -> next;
     temp -> next = nodeToInsert;
+    
+}
+
+void deleteNode(int pos, Node* &head, Node* &tail){
+    
+    if(pos == 1){
+        Node* temp = head;
+        head = head -> next;
+        temp -> next = NULL;
+        delete temp;
+    }
+    else{
+        Node* curr = head;
+        Node* prev = NULL;
+        int count = 1;
+        while(count< pos){
+            prev = curr;
+            curr = curr -> next;
+            count++;
+        }
+        
+        if(curr -> next == NULL){
+            prev -> next = curr -> next;
+            tail = prev;
+            curr -> next = NULL;
+        }
+        else{
+            prev -> next = curr -> next;
+            curr -> next = NULL;
+        }
+        
+      
+        delete curr;
+        
+        
+    }
     
 }
 
