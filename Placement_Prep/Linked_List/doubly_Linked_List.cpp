@@ -61,6 +61,13 @@ void insertAtPosition(Node* &head,Node* &tail, int pos, int d){
         insertAtTail(tail,d);
         return;
     }
+  
+  Node* insertionNode = new Node(d);
+  
+  insertionNode -> next = temp -> next;
+  insertionNode -> prev = temp;
+  temp -> next -> prev = insertionNode;
+  temp -> next = insertionNode;
     
 }
 
