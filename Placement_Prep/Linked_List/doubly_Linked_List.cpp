@@ -28,11 +28,18 @@ int getLen(Node* &head){
 }
 
 void insertAtHead(Node* &head, int d){
-    Node* temp = new Node(d);
+   if(head == NULL){
+        Node* temp = new Node(d);
+        head = temp;
+    }
     
-    temp -> next = head;
-    head -> prev = temp;
-    head = temp;
+   else{
+        Node* temp = new Node(d);
+    
+        temp -> next = head;
+        head -> prev = temp;
+        head = temp;
+   }
 }
 
 void insertAtTail(Node* &tail, int d){
@@ -83,7 +90,7 @@ void print(Node* &head){
 
 int main(){
     
-    Node* newNode = new Node(10);
+    //Node* newNode = new Node(10);
     Node* head = newNode;
     Node* tail = newNode;
     
