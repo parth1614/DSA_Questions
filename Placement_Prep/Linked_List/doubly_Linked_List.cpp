@@ -94,6 +94,33 @@ void insertAtPosition(Node* &head,Node* &tail, int pos, int d){
     
 }
 
+void deleteNode(Node* &head, int pos){
+    
+    if(pos == 1){
+        Node* temp = head;
+        temp -> next -> prev = NULL;
+        head = temp -> next;
+        temp -> next = NULL;
+        delete temp;
+    }
+    
+    Node* curr = head;
+    Node* previous = NULL;
+    int count = 1;
+    while(count < pos){
+        previous = curr;
+        curr = curr -> next;
+        count++;
+    }
+    
+    previous -> next = curr -> next;
+    curr -> next -> prev = previous;
+    curr -> next = NULL;
+    curr -> prev = NULL;
+    delete curr;
+    
+}
+
 void print(Node* &head){
     Node* temp = head;
     
