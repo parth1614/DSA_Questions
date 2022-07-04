@@ -61,7 +61,7 @@ void insertAtTail(Node* &tail, Node* &head, int d){
 void insertAtPosition(Node* &head,Node* &tail, int pos, int d){
     
     if(pos==1){
-        insertAtHead(head,d);
+        insertAtHead(head,tail,d);
         return;
     }
     
@@ -73,7 +73,7 @@ void insertAtPosition(Node* &head,Node* &tail, int pos, int d){
     }
     
     if(temp -> next == NULL){
-        insertAtTail(tail,d);
+        insertAtTail(tail,head,d);
         return;
     }
   
