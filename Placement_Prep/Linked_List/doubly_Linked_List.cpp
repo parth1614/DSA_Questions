@@ -14,6 +14,14 @@ class Node{
       this -> prev = NULL;
       this -> next = NULL;
   }
+  
+  //destructor to delete the node and free the memory
+  ~Node(){
+      if(this -> next != NULL){
+          delete next;
+          this->next = NULL;
+      }
+  }
     
 };
 
