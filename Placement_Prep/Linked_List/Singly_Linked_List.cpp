@@ -25,16 +25,32 @@ class Node{
     
 };
 
-void insertAtHead(Node* &head, int d){
+void insertAtHead(Node* &head, Node* &tail, int d){
+   if(head == NULL){
+      Node* temp = new Node(d);
+      head = temp;
+      tail = temp;
+   }
+  else{
     Node* temp = new Node(d);
     temp -> next = head;
     head = temp;
+  }
 }
 
-void insertAtTail(Node* &tail, int d){
-    Node* temp = new Node(d);
-    tail -> next = temp;
-    tail = temp;
+void insertAtTail(Node* &tail, Node* &head, int d){
+    
+  if(tail == NULL){
+      Node* temp = new Node(d)
+      tail = temp;
+      head = temp;
+    }
+  
+    else{
+      Node* temp = new Node(d);
+      tail -> next = temp;
+      tail = temp;
+    }
 }
 
 void insertAtPosition(Node* &tail,Node* &head, int pos, int d){
@@ -116,9 +132,9 @@ void print(Node* &head){
 
 int main(){
     
-    Node* newNode = new Node(10);
-    Node* head = newNode;
-    Node* tail = newNode;
+  //  Node* newNode = new Node(10);
+    Node* head = NULL;
+    Node* tail = NULL;
     //print(head);
     
     //cout<<newNode -> data <<endl;
