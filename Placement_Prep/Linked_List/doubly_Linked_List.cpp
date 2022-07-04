@@ -27,10 +27,11 @@ int getLen(Node* &head){
     return len;
 }
 
-void insertAtHead(Node* &head, int d){
+void insertAtHead(Node* &head, Node* &tail, int d){
    if(head == NULL){
         Node* temp = new Node(d);
         head = temp;
+        tail = temp;
     }
     
    else{
@@ -42,10 +43,11 @@ void insertAtHead(Node* &head, int d){
    }
 }
 
-void insertAtTail(Node* &tail, int d){
+void insertAtTail(Node* &tail, Node* &head, int d){
     if(tail == NULL){
        Node* temp = new Node(d);
        tail = temp;
+       head = temp;
    }
    else{
         Node* temp = new Node(d);
