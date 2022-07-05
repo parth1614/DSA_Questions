@@ -42,3 +42,6 @@ LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head)
     
     return prev; // because at the end, prev pointer would point at the last node that is now the first node and it is head position now
 }
+
+// This is an iterative approach to the question
+// Time Complexity => O(N); Space Complexity => O(1)
