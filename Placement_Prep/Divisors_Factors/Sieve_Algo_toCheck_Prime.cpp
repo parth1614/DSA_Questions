@@ -8,9 +8,9 @@ int main(){
     int n = 1e7 + 10;
     vector<bool> isPrime(n,true);
     
-    for(int i=2; i<=n; ++i){
+    for(int i=2; i<=n; ++i){ // Loop traverses N times
         if(isPrime[i]==true){
-            for(int j= 2*i; j<=n; j += i){
+            for(int j= 2*i; j<=n; j += i){ // Loop Traverses Log(Log(N)) times because of the above 'true' check; If 'true' check wasn't there, it'd be Log(N) times.
                 isPrime[j] = false;
             }
         }
@@ -32,3 +32,4 @@ int main(){
     }
     
 }
+// Time Complexity of the Sieve Algo is => O(N(Log(Log(N)))) 
