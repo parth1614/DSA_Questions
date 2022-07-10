@@ -2,27 +2,24 @@
     
     class Node {
         public :
-
         int data;
         Node *next;
-
         Node(int data) {
             this -> data = data;
             this -> next = NULL;
         }
     };
-
 *************************************************/
-Node* detectLoop(Node* head){
+Node *detectLoop(Node* head){
     if(head==NULL){
         return NULL;
     }
     if(head->next==NULL){
         return NULL;
     }
-    if(head->next=head){
-        return head;
-    }
+//     if(head->next=head){
+//         return head;
+//     }
     
     Node* fast = head;
     Node* slow = head;
@@ -40,7 +37,7 @@ Node* detectLoop(Node* head){
     return NULL;
 }
 
-Node* findFirstNode(Node* head){
+Node *findFirstNode(Node* head){
     
     Node* intersection = detectLoop(head);
     if(intersection == NULL){
@@ -62,7 +59,10 @@ Node *removeLoop(Node *head)
         return NULL;
     }
     Node* startOfLoop = findFirstNode(head);
-    Node* temp = head;
+    if(startOfLoop == NULL){
+        return head;
+    }
+    Node* temp = startOfLoop;
     
     while(temp->next != startOfLoop){
         temp = temp->next;
