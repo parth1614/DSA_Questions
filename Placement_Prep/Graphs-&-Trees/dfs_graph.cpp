@@ -37,3 +37,5 @@ vector<vector<int>> depthFirstSearch(int V, int E, vector<vector<int>> &edges)
     sort(result.begin(),result.end());
     return result;
 }
+// Time Complexity => O(VlogV + E). Generally it's O(V+E) for DFS, but here we are also sorting the vertices vector so (VlogV + V + E)
+// Space Complexity => O(v+E)
