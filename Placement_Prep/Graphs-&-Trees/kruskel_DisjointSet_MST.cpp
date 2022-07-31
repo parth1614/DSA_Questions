@@ -26,13 +26,13 @@ void Union(vector<int> &parent, vector<int> &rank, int v1, int v2)
     int p2 = findParent(parent, v2);
     
     if(rank[p1]<rank[p2]){
-        parent[v1] = p2;
+        parent[p1] = p2;
     }
     else if(rank[p2]<rank[p1]){
-        parent[v2] = p1;
+        parent[p2] = p1;
     }
     else{
-        parent[v1] = p2;
+        parent[p1] = p2;
         rank[p2]++;
     }
 }
@@ -62,4 +62,5 @@ int minimumSpanningTree(vector<vector<int>>& edges, int n)
     }
     return minWt;
 }
+
 // TIme Complexity=> O(mlogn)
