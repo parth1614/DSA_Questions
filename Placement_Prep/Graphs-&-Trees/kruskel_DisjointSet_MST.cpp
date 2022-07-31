@@ -62,4 +62,4 @@ int minimumSpanningTree(vector<vector<int>>& edges, int n)
     }
     return minWt;
 }
-
+// TIme Complexity=> O(mlogn)
