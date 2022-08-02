@@ -9,11 +9,12 @@ void solver(vector<string> &res, string str, int start, string add){
         //including
         char elem = str[start];
          add.push_back(elem);
-        res.push_back(add);
         solver(res, str, start + 1,add);
     }
     else{
-        
+        if(add.length()>0){
+            res.push_back(add);
+        }
         return ;
     }
 }
